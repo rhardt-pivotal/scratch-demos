@@ -172,7 +172,7 @@ public class SecdemoApplication extends WebSecurityConfigurerAdapter{
 		@Autowired
 		private JdbcTemplate jdbcTemplate;
 
-		@Scheduled(fixedRate = 5000)
+		@Scheduled(fixedRate = 300000)
 		public void run() throws SQLException {
 			List<ProcessList> plList = jdbcTemplate.queryForList("SHOW PROCESSLIST").stream()
 					.map((objMap) -> new ProcessList(objMap))
